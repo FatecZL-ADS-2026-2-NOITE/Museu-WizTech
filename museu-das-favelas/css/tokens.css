@@ -1,0 +1,124 @@
+/*
+ * TOKENS DE DESIGN: único ponto de definição visual da aplicação.
+ *
+ * Para aplicar a identidade visual oficial do Museu, altere SOMENTE este arquivo:
+ *   - cores (bloco "Cores")
+ *   - tipografia (bloco "Tipografia" e o @font-face de exemplo abaixo)
+ *   - raios, sombras, espaçamentos
+ * Ícones: assets/icons/icons.js | Logotipo e imagens: content/images.js + assets/images/
+ *
+ * ATENÇÃO: todos os valores abaixo são PROVISÓRIOS. Não foram extraídos do manual de marca do
+ * Museu das Favelas (não disponível durante o desenvolvimento). Ao trocar cores, confira o
+ * contraste (WCAG 2.1 AA): 4,5:1 para texto e 3:1 para bordas de componentes e foco.
+ */
+
+/* Exemplo para fonte própria (descomente e ajuste quando houver arquivo e licença web):
+@font-face {
+  font-family: "Fonte do Museu";
+  src: url("../assets/fonts/fonte-do-museu.woff2") format("woff2");
+  font-weight: 400 800;
+  font-display: swap;
+}
+*/
+
+:root {
+  /* ---------- Cores (provisórias) ---------- */
+  --color-bg: #FBF7F0;
+  --color-surface: #FFFFFF;
+  --color-surface-alt: #F1E9DC;
+  --color-text: #1E1A16;
+  --color-text-muted: #5A5148;
+
+  --color-primary: #8F2D12;
+  --color-primary-hover: #74240E;
+  --color-on-primary: #FFFFFF;
+
+  --color-accent: #F2B705;      /* detalhes decorativos (nunca como cor de texto) */
+  --color-on-accent: #1E1A16;
+
+  --color-border: #7D7062;      /* bordas de componentes interativos (>= 3:1) */
+  --color-border-soft: #DDD2C2; /* divisórias decorativas */
+
+  --color-success: #1B6B3A;
+  --color-success-bg: #E6F4EA;
+  --color-error: #A4262C;
+  --color-error-bg: #FDECEA;
+
+  --color-focus: #0B57D0;
+  --color-placeholder-bg: #EFE6D8;
+
+  /* ---------- Tipografia (provisória: fontes do sistema) ---------- */
+  --font-body: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-display: var(--font-body);
+
+  --text-xs: 0.8125rem;
+  --text-sm: 0.9375rem;
+  --text-base: 1.125rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.5rem;
+  --text-2xl: 1.875rem;
+  --text-3xl: 2.25rem;
+
+  --weight-regular: 400;
+  --weight-bold: 700;
+  --weight-heavy: 800;
+
+  --leading-body: 1.55;
+  --leading-heading: 1.2;
+
+  /* ---------- Espaçamento, forma e layout ---------- */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+
+  --gutter: 1rem;
+  --layout-max: 36rem;
+  --tap-size: 3rem;          /* área mínima de toque (48px com fonte padrão) */
+
+  --radius-sm: 0.5rem;
+  --radius-md: 0.875rem;
+  --radius-lg: 1.25rem;
+  --border-w: 2px;
+  --focus-w: 3px;
+
+  --shadow-card: 0 1px 2px rgb(30 26 22 / 0.08), 0 6px 20px rgb(30 26 22 / 0.08);
+
+  /* ---------- Movimento ---------- */
+  --motion-fast: 150ms;
+  --motion-slow: 280ms;
+}
+
+/* ---------- Alto contraste (ativado pelo botão da barra de acessibilidade) ---------- */
+html[data-contrast="high"] {
+  --color-bg: #000000;
+  --color-surface: #000000;
+  --color-surface-alt: #1A1A1A;
+  --color-text: #FFFFFF;
+  --color-text-muted: #FFFFFF;
+
+  --color-primary: #FFD400;
+  --color-primary-hover: #FFE766;
+  --color-on-primary: #000000;
+
+  --color-accent: #FFD400;
+  --color-on-accent: #000000;
+
+  --color-border: #FFFFFF;
+  --color-border-soft: #FFFFFF;
+
+  --color-success: #7CFFA0;
+  --color-success-bg: #000000;
+  --color-error: #FF9E9E;
+  --color-error-bg: #000000;
+
+  --color-focus: #00E5FF;
+  --color-placeholder-bg: #000000;
+
+  --border-w: 3px;
+  --focus-w: 4px;
+  --shadow-card: none;
+}

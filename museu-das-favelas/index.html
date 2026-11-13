@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-contrast="normal">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Regras de convivência – Museu das Favelas</title>
+  <meta name="description" content="Conheça, de forma interativa, as regras de convivência do Museu das Favelas.">
+  <!-- Favicon pendente (item na lista de materiais). Ícone vazio evita requisição com erro. -->
+  <link rel="icon" href="data:,">
+
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="skip">Pular para o conteúdo</a>
+
+  <div class="app">
+    <header class="site-header">
+      <div class="site-header__top">
+        <div id="logo-slot" class="logo-slot"></div>
+        <div id="lang-switcher" class="lang" role="group" data-i18n-attr="aria-label:lang.group" aria-label="Idioma"></div>
+      </div>
+
+      <div class="toolbar" role="group" aria-labelledby="toolbar-label">
+        <span id="toolbar-label" class="sr-only" data-i18n="a11y.group">Acessibilidade</span>
+        <!-- O texto visível (A−, A, A+) faz parte do nome acessível (WCAG 2.5.3). -->
+        <button type="button" class="tool-btn" id="font-decrease">
+          <span>A−</span>
+          <span class="sr-only" data-i18n="a11y.fontDecrease">Diminuir fonte</span>
+        </button>
+        <button type="button" class="tool-btn" id="font-reset">
+          <span>A</span>
+          <span class="sr-only" data-i18n="a11y.fontReset">Tamanho original da fonte</span>
+        </button>
+        <button type="button" class="tool-btn" id="font-increase">
+          <span>A+</span>
+          <span class="sr-only" data-i18n="a11y.fontIncrease">Aumentar fonte</span>
+        </button>
+        <button type="button" class="tool-btn tool-btn--wide" id="contrast-toggle" aria-pressed="false">
+          <span class="icon-slot" data-icon="contrast"></span>
+          <span data-i18n="a11y.contrast">Alto contraste</span>
+        </button>
+      </div>
+    </header>
+
+    <main id="main" class="site-main">
+      <div id="view" class="view"></div>
+    </main>
+
+    <footer class="site-footer">
+      <a id="official-link" class="site-footer__link" target="_blank" rel="noopener noreferrer">
+        <span data-i18n="footer.visit">Informações para visita no site oficial do Museu</span>
+        <span class="sr-only" data-i18n="footer.newTab">(abre em nova aba)</span>
+        <span class="icon-slot" data-icon="external"></span>
+      </a>
+      <p class="site-footer__note" data-i18n="footer.source">Conteúdo baseado no regulamento oficial do Museu das Favelas.</p>
+      <p class="site-footer__note" id="review-notice" data-i18n="footer.reviewNotice"></p>
+    </footer>
+  </div>
+
+  <!-- Avisos para leitores de tela (troca de idioma, fonte, contraste, feedback) -->
+  <div id="live" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></div>
+
+  <noscript>
+    <p class="noscript">
+      Este site precisa de JavaScript para funcionar. / This site needs JavaScript to work. /
+      Este sitio necesita JavaScript para funcionar.
+      <a href="https://www.museudasfavelas.org.br/visite/">museudasfavelas.org.br/visite</a>
+    </p>
+  </noscript>
+
+  <!-- Scripts clássicos (sem módulos), na ordem de dependência: funciona abrindo este arquivo direto do disco. -->
+  <script defer src="content/config.js"></script>
+  <script defer src="assets/icons/icons.js"></script>
+  <script defer src="content/images.js"></script>
+  <script defer src="content/rules.js"></script>
+  <script defer src="content/quiz.js"></script>
+  <script defer src="content/i18n/pt-BR.js"></script>
+  <script defer src="content/i18n/en.js"></script>
+  <script defer src="content/i18n/es.js"></script>
+
+  <script defer src="js/dom.js"></script>
+  <script defer src="js/i18n.js"></script>
+  <script defer src="js/state.js"></script>
+  <script defer src="js/router.js"></script>
+  <script defer src="js/a11y.js"></script>
+  <script defer src="js/components/image-slot.js"></script>
+  <script defer src="js/components/progress.js"></script>
+  <script defer src="js/components/header.js"></script>
+  <script defer src="js/views/intro.js"></script>
+  <script defer src="js/views/cards.js"></script>
+  <script defer src="js/views/quiz.js"></script>
+  <script defer src="js/views/result.js"></script>
+  <script defer src="js/main.js"></script>
+</body>
+</html>

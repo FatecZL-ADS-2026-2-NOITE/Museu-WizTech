@@ -28,7 +28,7 @@
       <a class="is-current" href="#inicio" aria-current="page">Home</a>
       <a href="#sobre">Sobre</a>
       <a href="#obras">Obras</a>
-      <span aria-disabled="true">Ingresso</span>
+      <a href="#ingresso">Ingresso</a>
     </nav>
   </header>
 
@@ -58,6 +58,17 @@
           O Museu das Favelas é um espaço de memória, arte e conhecimento,
           dedicado a contar as múltiplas histórias de diversas favelas do Brasil.
         </p>
+        <p>
+          Suas exposições e narrativas valorizam as culturas, os saberes e as
+          experiências que nascem nos territórios, ampliando o espaço para que
+          diferentes vozes contem suas próprias histórias.
+        </p>
+        <blockquote class="about-quote">
+          “Toda comunidade guarda histórias que merecem ser vistas, ouvidas e lembradas.”
+          <footer class="about-quote__attribution">
+            Lia Raiz - Curadora de Memórias e Vozes do Território
+          </footer>
+        </blockquote>
       </div>
       <img class="about-image" src="img/museum-scene-1.webp" alt="Jovens observam a comunidade no alto de uma favela">
     </section>
@@ -85,6 +96,33 @@
         </p>
       </div>
       <div class="works-list" id="works-list"></div>
+    </section>
+
+    <div class="word-marquee word-marquee--reverse" role="img" aria-label="Visita, encontro, comunidade e diversidade">
+      <div class="word-marquee__track" aria-hidden="true">
+        <div class="word-marquee__group">
+          <span>VISITA</span><span>ENCONTRO</span><span>COMUNIDADE</span><span>DIVERSIDADE</span>
+        </div>
+        <div class="word-marquee__group">
+          <span>VISITA</span><span>ENCONTRO</span><span>COMUNIDADE</span><span>DIVERSIDADE</span>
+        </div>
+        <div class="word-marquee__group">
+          <span>VISITA</span><span>ENCONTRO</span><span>COMUNIDADE</span><span>DIVERSIDADE</span>
+        </div>
+      </div>
+    </div>
+
+    <section class="ticket-section" id="ingresso" aria-labelledby="ticket-title">
+      <div class="ticket-intro">
+        <span class="ticket-accent" aria-hidden="true"></span>
+        <h1 id="ticket-title">Comprar ingresso</h1>
+        <p>
+          Antes de adquirir seu ingresso, confira as principais regras de
+          convivência no Museu. Após isso, responda um quiz rápido para liberar
+          sua compra.
+        </p>
+      </div>
+      <button class="ticket-start-button" type="button">Iniciar o quiz</button>
     </section>
   </main>
   <script src="carousel.js"></script>

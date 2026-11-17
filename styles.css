@@ -193,7 +193,7 @@ main {
   position: absolute;
   z-index: 2;
   bottom: 10.5%;
-  left: 4.1%;
+  right: 4.1%;
   display: flex;
   gap: clamp(9px, 1.5vw, 22px);
 }
@@ -201,9 +201,10 @@ main {
 .hero-progress button {
   appearance: none;
   width: clamp(49px, 7.6vw, 110px);
-  height: 2px;
+  height: clamp(5px, 0.6vw, 8px);
   padding: 0;
   border: 0;
+  border-radius: 999px;
   background: rgba(255, 255, 255, 0.28);
   cursor: pointer;
   transition: background-color 160ms ease;

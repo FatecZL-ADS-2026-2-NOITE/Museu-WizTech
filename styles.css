@@ -85,7 +85,7 @@ main {
 .main-nav span {
   color: #fff;
   font-family: "Bayon", sans-serif;
-  font-size: clamp(10px, 1.55vw, 22px);
+  font-size: clamp(12px, 1.8vw, 26px);
   line-height: 1;
   text-decoration: none;
   text-transform: uppercase;
@@ -557,7 +557,7 @@ main {
 
   .main-nav a,
   .main-nav span {
-    font-size: 11px;
+    font-size: 13px;
   }
 
   .hero-slide {

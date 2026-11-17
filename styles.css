@@ -220,7 +220,7 @@ main {
 
 .about {
   display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+  grid-template-columns: minmax(0, 1.3fr) minmax(240px, 0.7fr);
   align-items: start;
   gap: clamp(24px, 4vw, 60px);
   height: auto;
@@ -309,10 +309,9 @@ main {
   }
 
   .about-image {
-    width: 100%;
-    max-width: 720px;
+    width: min(92%, 660px);
     aspect-ratio: 2.4 / 1;
-    justify-self: center;
+    justify-self: end;
   }
 }
 
@@ -609,7 +608,7 @@ main {
   }
 
   .about-image {
-    width: 100%;
+    width: 92%;
     aspect-ratio: 2.2 / 1;
   }
 }

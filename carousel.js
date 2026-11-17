@@ -3,10 +3,6 @@
   const slides = Array.from(document.querySelectorAll(".hero-slide"));
   const controls = Array.from(document.querySelectorAll(".hero-progress button"));
 
-  if (!hero || slides.length !== controls.length || slides.length < 2) {
-    throw new Error("O carrossel precisa ter pelo menos dois slides e um botão por slide.");
-  }
-
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
   const intervalDuration = 5000;
   let activeIndex = 0;

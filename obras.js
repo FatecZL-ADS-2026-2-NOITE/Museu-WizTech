@@ -1,27 +1,48 @@
 const obras = [
   {
-    title: "Raízes — Lídia Lisboa",
+    title: "Maria Beatriz Nascimento — Paulo Nazareth",
     description:
-      "Instalação artística criada em parceria com coletivos de mulheres, utilizando técnicas de crochê para representar a ancestralidade, a identidade e as raízes culturais das comunidades periféricas.",
-    image: "img/museum-scene-2.png",
-    imageAlt: "Instalação de crochê colorida em uma sala de exposição",
+      "Escultura de aproximadamente seis metros de altura que homenageia a historiadora e intelectual Maria Beatriz Nascimento, destacando sua contribuição para a história afro-brasileira e a valorização da identidade negra.",
+    image: "img/maria.webp",
+    imageAlt: "Escultura de homenagem a Maria Beatriz Nascimento",
     imageSide: "right",
   },
   {
-    title: "Quebradinha — Marcelino Melo",
+    title: "Faveleira — Babi Lopes",
     description:
-      "Conjunto de miniaturas de casas da periferia feitas com materiais recicláveis, representando a arquitetura e o cotidiano das comunidades.",
-    image: "img/museum-scene-3.png",
-    imageAlt: "Artista cria miniaturas de casas inspiradas na periferia",
+      "Obra que representa a força, a ancestralidade e o afeto das mulheres negras, valorizando suas raízes culturais e sua importância na construção da identidade brasileira.",
+    image: "img/faveleira.webp",
+    imageAlt: "Obra Faveleira da artista Babi Lopes",
     imageSide: "left",
+  },
+  {
+    title: "Raízes — Lídia Lisboa",
+    description:
+      "Instalação artística criada em parceria com os coletivos Tem Sentimento e Sin Fronteras, utilizando técnicas de crochê para representar a ancestralidade, a identidade e as raízes culturais das comunidades periféricas.",
+    image: "img/raizes.webp",
+    imageAlt: "Instalação de esculturas de crochê coloridas em uma sala de exposição",
+    imageSide: "right",
+  },
+  {
+    title: "Visão Periférica — Topográficas e Coletivo Coletores",
+    description:
+      "Instalação audiovisual que combina fotografias, vídeos, cores e sons para apresentar diferentes perspectivas sobre as periferias brasileiras, destacando as experiências, memórias e expressões culturais de seus moradores.",
+    image: "img/visao.webp",
+    imageAlt: "Instalação audiovisual sobre as periferias brasileiras",
+    imageSide: "left",
+  },
+  {
+    title: "Espelhos — Kayodê e Jailson de Souza e Silva",
+    description:
+      "Projeto que reúne produção sonora e texto para provocar reflexões sobre beleza, autoestima e identidade, questionando os padrões de beleza e os preconceitos associados às favelas.",
+    image: "img/espelhos.webp",
+    imageAlt: "Instalação artística do projeto Espelhos",
+    imageSide: "right",
   },
 ];
 
 const worksList = document.querySelector("#works-list");
 
-if (!worksList) {
-  throw new Error("Não foi possível encontrar a lista de obras.");
-}
 
 obras.forEach((obra) => {
   const card = document.createElement("article");

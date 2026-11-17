@@ -1,106 +1,94 @@
 <!doctype html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta
-      name="description"
-      content="Conheça o Museu das Favelas e as histórias das favelas do Brasil."
-    >
-    <title>Museu das Favelas</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bayon&family=Bungee&family=Urbanist:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    >
-    <link rel="stylesheet" href="styles.css">
-  </head>
-  <body>
-    <svg class="svg-definitions" aria-hidden="true" focusable="false">
-      <defs>
-        <clipPath id="hero-wave" clipPathUnits="objectBoundingBox">
-          <path d="M0 0H1V0.93C0.86 0.95 0.75 0.99 0.57 0.995C0.39 1 0.16 0.98 0 0.93Z">
-          </path>
-        </clipPath>
-      </defs>
-    </svg>
-    <header class="site-header">
-      <nav class="main-nav" aria-label="Navegação principal">
-        <a class="is-current" href="#inicio" aria-current="page">Home</a>
-        <a href="#sobre">Sobre</a>
-        <a href="#obras">Obras</a>
-        <span aria-disabled="true">Ingresso</span>
-      </nav>
-    </header>
 
-    <main>
-      <section
-        class="hero"
-        id="inicio"
-        aria-label="Destaques do Museu das Favelas"
-        aria-roledescription="carrossel"
-      >
-        <div class="hero-slides" aria-live="off">
-          <img
-            class="hero-slide is-active"
-            src="img/hero-favela-1.png"
-            alt=""
-            aria-hidden="false"
-          >
-          <img
-            class="hero-slide"
-            src="img/hero-favela-1.png"
-            alt=""
-            aria-hidden="true"
-          >
-          <img
-            class="hero-slide"
-            src="img/hero-favela-1.png"
-            alt=""
-            aria-hidden="true"
-          >
-        </div>
-        <div class="hero-content">
-          <img
-            class="hero-logo"
-            src="img/logo-museu.png"
-            alt="Museu das Favelas"
-          >
-          <a class="hero-button" href="#sobre">Venha nos conhecer</a>
-        </div>
-        <div class="hero-progress" role="group" aria-label="Selecionar destaque">
-          <button type="button" class="is-active" aria-label="Mostrar destaque 1" aria-pressed="true"></button>
-          <button type="button" aria-label="Mostrar destaque 2" aria-pressed="false"></button>
-          <button type="button" aria-label="Mostrar destaque 3" aria-pressed="false"></button>
-        </div>
-      </section>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Conheça o Museu das Favelas e as histórias das favelas do Brasil.">
+  <title>Museu das Favelas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bayon&family=Bungee&family=Urbanist:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
 
-      <section class="about" id="sobre">
-        <div class="about-copy">
-          <span class="section-accent" aria-hidden="true"></span>
-          <h1>Sobre o Museu</h1>
-          <p>
-            O Museu das Favelas é um espaço de memória, arte e conhecimento,
-            dedicado a contar as múltiplas histórias de diversas favelas do Brasil.
-          </p>
-        </div>
-        <img
-          class="about-image"
-          src="img/museum-scene-1.png"
-          alt="Jovens observam a comunidade no alto de uma favela"
-        >
-      </section>
+<body>
+  <svg class="svg-definitions" aria-hidden="true" focusable="false">
+    <defs>
+      <clipPath id="hero-wave" clipPathUnits="objectBoundingBox">
+        <path d="M0 0H1V0.93C0.86 0.95 0.75 0.99 0.57 0.995C0.39 1 0.16 0.98 0 0.93Z">
+        </path>
+      </clipPath>
+    </defs>
+  </svg>
+  <header class="site-header">
+    <nav class="main-nav" aria-label="Navegação principal">
+      <a class="is-current" href="#inicio" aria-current="page">Home</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#obras">Obras</a>
+      <span aria-disabled="true">Ingresso</span>
+    </nav>
+  </header>
 
-      <section class="works-section" id="obras" aria-labelledby="works-title">
-        <div class="works-heading">
-          <span class="works-accent" aria-hidden="true"></span>
-          <h1 id="works-title">Principais Obras</h1>
+  <main>
+    <section class="hero" id="inicio" aria-label="Destaques do Museu das Favelas" aria-roledescription="carrossel">
+      <div class="hero-slides" aria-live="off">
+        <img class="hero-slide is-active" src="img/hero-1.webp" alt="" aria-hidden="false">
+        <img class="hero-slide" src="img/hero-2.webp" alt="" aria-hidden="true">
+        <img class="hero-slide" src="img/hero-3.webp" alt="" aria-hidden="true">
+      </div>
+      <div class="hero-content">
+        <img class="hero-logo" src="img/logo-museu.png" alt="Museu das Favelas">
+        <a class="hero-button" href="#sobre">Venha nos conhecer</a>
+      </div>
+      <div class="hero-progress" role="group" aria-label="Selecionar destaque">
+        <button type="button" class="is-active" aria-label="Mostrar destaque 1" aria-pressed="true"></button>
+        <button type="button" aria-label="Mostrar destaque 2" aria-pressed="false"></button>
+        <button type="button" aria-label="Mostrar destaque 3" aria-pressed="false"></button>
+      </div>
+    </section>
+
+    <section class="about" id="sobre">
+      <div class="about-copy">
+        <span class="section-accent" aria-hidden="true"></span>
+        <h1>Sobre o Museu</h1>
+        <p>
+          O Museu das Favelas é um espaço de memória, arte e conhecimento,
+          dedicado a contar as múltiplas histórias de diversas favelas do Brasil.
+        </p>
+      </div>
+      <img class="about-image" src="img/museum-scene-1.webp" alt="Jovens observam a comunidade no alto de uma favela">
+    </section>
+
+    <div class="word-marquee" role="img" aria-label="Arte, cultura, favela e identidade">
+      <div class="word-marquee__track" aria-hidden="true">
+        <div class="word-marquee__group">
+          <span>ARTE</span><span>CULTURA</span><span>FAVELA</span><span>IDENTIDADE</span>
         </div>
-        <div class="works-list" id="works-list"></div>
-      </section>
-    </main>
-    <script src="carousel.js"></script>
-    <script src="obras.js"></script>
-  </body>
+        <div class="word-marquee__group">
+          <span>ARTE</span><span>CULTURA</span><span>FAVELA</span><span>IDENTIDADE</span>
+        </div>
+        <div class="word-marquee__group">
+          <span>ARTE</span><span>CULTURA</span><span>FAVELA</span><span>IDENTIDADE</span>
+        </div>
+      </div>
+    </div>
+
+    <section class="works-section" id="obras" aria-labelledby="works-title">
+      <div class="works-heading">
+        <span class="works-accent" aria-hidden="true"></span>
+        <h1 id="works-title">Principais Obras</h1>
+        <p class="works-description">
+          Conheça obras que celebram a criatividade, a memória e as vivências das favelas brasileiras.
+        </p>
+      </div>
+      <div class="works-list" id="works-list"></div>
+    </section>
+  </main>
+  <script src="carousel.js"></script>
+  <script src="obras.js"></script>
+</body>
+
 </html>

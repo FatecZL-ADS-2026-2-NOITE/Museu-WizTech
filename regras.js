@@ -191,6 +191,12 @@
     updateProgress();
   });
 
+  quizButton.addEventListener("click", () => {
+    if (!quizButton.disabled) {
+      window.location.assign("quiz.html");
+    }
+  });
+
   document.addEventListener("museu:languagechange", renderCategories);
   renderCategories();
 })();

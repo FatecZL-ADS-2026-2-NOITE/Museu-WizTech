@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="pt-BR" data-quiz-page="true">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Prévia do quiz de regras de convivência do Museu das Favelas." data-i18n="quiz.pageDescription">
+  <title data-i18n="quiz.documentTitle">Quiz de convivência | Museu das Favelas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bayon&family=Bungee&family=Urbanist:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <nav class="main-nav" aria-label="Navegação principal" data-i18n-aria-label="nav.label">
+      <a href="index.html#ingresso" data-i18n="nav.tickets">Ingresso</a>
+      <a class="is-current" href="quiz.html" aria-current="page" data-i18n="quiz.nav">Quiz</a>
+    </nav>
+    <div
+      class="accessibility-controls"
+      role="group"
+      aria-label="Opções de acessibilidade"
+      data-i18n-aria-label="accessibility.group">
+      <button
+        type="button"
+        data-font-size="decrease"
+        aria-label="Diminuir tamanho da fonte"
+        data-i18n-aria-label="accessibility.decrease">A−</button>
+      <button
+        type="button"
+        data-font-size="increase"
+        aria-label="Aumentar tamanho da fonte"
+        data-i18n-aria-label="accessibility.increase">A+</button>
+      <button
+        type="button"
+        class="contrast-toggle"
+        aria-label="Ativar alto contraste"
+        data-i18n-aria-label="accessibility.contrastOn"
+        aria-pressed="false">◐</button>
+    </div>
+  </header>
+
+  <nav class="language-switcher" aria-label="Idioma" data-i18n-aria-label="language.label">
+    <span class="language-switcher__label" data-i18n="language.label">Idioma</span>
+    <button type="button" lang="pt-BR" data-language="pt" aria-label="Português" aria-pressed="true">PT</button>
+    <button type="button" lang="en" data-language="en" aria-label="English" aria-pressed="false">EN</button>
+    <button type="button" lang="es" data-language="es" aria-label="Español" aria-pressed="false">ES</button>
+  </nav>
+
+  <main class="quiz-page">
+    <section class="quiz-shell" aria-labelledby="quiz-title">
+      <a class="quiz-back" href="index.html#ingresso">
+        <span aria-hidden="true">←</span>
+        <span data-i18n="quiz.backToRules">Voltar às regras</span>
+      </a>
+
+      <header class="quiz-heading">
+        <span class="quiz-accent" aria-hidden="true"></span>
+        <p class="quiz-eyebrow" data-i18n="quiz.eyebrow">DESAFIO DO MUSEU</p>
+        <h1 id="quiz-title" data-i18n="quiz.title">Quiz de convivência</h1>
+        <p data-i18n="quiz.description">Confira o que você aprendeu sobre as regras de convivência do Museu.</p>
+      </header>
+
+      <section class="quiz-progress-card" aria-labelledby="quiz-progress-label">
+        <div class="quiz-progress-card__heading">
+          <span id="quiz-progress-label" data-i18n="quiz.progressLabel">Progresso do quiz</span>
+          <strong data-i18n="quiz.progressValue">Pergunta 1 de 5</strong>
+        </div>
+        <div
+          class="quiz-progress"
+          role="progressbar"
+          aria-label="Progresso do quiz"
+          data-i18n-aria-label="quiz.progressLabel"
+          aria-valuemin="0"
+          aria-valuemax="5"
+          aria-valuenow="1">
+          <span class="quiz-progress__fill"></span>
+        </div>
+      </section>
+
+      <article class="quiz-question-card" aria-labelledby="quiz-question">
+        <div class="quiz-question-card__top">
+          <span class="quiz-question-card__number" aria-hidden="true">01</span>
+          <span class="quiz-placeholder-badge" data-i18n="quiz.placeholderBadge">PLACEHOLDER</span>
+        </div>
+        <p class="quiz-question-card__label" data-i18n="quiz.questionLabel">PERGUNTA 01</p>
+        <h2 id="quiz-question" data-i18n="quiz.questionPlaceholder">Placeholder para a pergunta sobre as regras do Museu.</h2>
+        <p class="quiz-question-card__instruction" data-i18n="quiz.answerInstruction">As alternativas desta pergunta aparecerão aqui.</p>
+
+        <ul class="quiz-options" aria-label="Alternativas da pergunta" data-i18n-aria-label="quiz.optionsLabel">
+          <li class="quiz-option">
+            <span class="quiz-option__marker" aria-hidden="true"></span>
+            <span data-i18n="quiz.option1">Placeholder da alternativa 1</span>
+          </li>
+          <li class="quiz-option">
+            <span class="quiz-option__marker" aria-hidden="true"></span>
+            <span data-i18n="quiz.option2">Placeholder da alternativa 2</span>
+          </li>
+          <li class="quiz-option">
+            <span class="quiz-option__marker" aria-hidden="true"></span>
+            <span data-i18n="quiz.option3">Placeholder da alternativa 3</span>
+          </li>
+        </ul>
+
+        <p class="quiz-question-card__note" data-i18n="quiz.note">O conteúdo do quiz será adicionado em uma próxima etapa.</p>
+      </article>
+
+      <footer class="quiz-actions">
+        <a class="quiz-back quiz-back--bottom" href="index.html#ingresso" data-i18n="quiz.backToRules">Voltar às regras</a>
+        <div class="quiz-actions__buttons">
+          <button type="button" disabled data-i18n="quiz.previous">Anterior</button>
+          <button type="button" disabled data-i18n="quiz.next">Próxima pergunta</button>
+        </div>
+      </footer>
+    </section>
+  </main>
+
+  <script src="idiomas.js"></script>
+  <script src="acessibilidade.js"></script>
+</body>
+
+</html>

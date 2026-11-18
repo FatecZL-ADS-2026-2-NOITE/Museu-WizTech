@@ -100,6 +100,55 @@ main {
   text-underline-offset: 3px;
 }
 
+.language-switcher {
+  position: fixed;
+  z-index: 20;
+  right: clamp(12px, 2vw, 28px);
+  bottom: clamp(12px, 2vw, 28px);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px;
+  border: 1px solid rgba(255, 142, 43, 0.72);
+  border-radius: 999px;
+  background: rgba(17, 38, 19, 0.94);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
+  color: #fff;
+  backdrop-filter: blur(8px);
+}
+
+.language-switcher__label {
+  padding: 0 8px 0 10px;
+  font-family: "Urbanist", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.language-switcher button {
+  min-width: 38px;
+  min-height: 36px;
+  padding: 0 9px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+  font-family: "Bayon", sans-serif;
+  font-size: 15px;
+  line-height: 1;
+  transition: background-color 160ms ease, color 160ms ease;
+}
+
+.language-switcher button[aria-pressed="true"] {
+  background: var(--color-orange);
+  color: var(--color-green-dark);
+}
+
+.language-switcher button:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
 .main-nav a[href="#ingresso"].is-current {
   color: var(--color-orange);
 }

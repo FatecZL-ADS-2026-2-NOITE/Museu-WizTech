@@ -80,6 +80,55 @@
       text-underline-offset: 3px;
     }
 
+    .language-switcher {
+      position: fixed;
+      z-index: 20;
+      right: clamp(12px, 2vw, 28px);
+      bottom: clamp(12px, 2vw, 28px);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding: 6px;
+      border: 1px solid rgba(255, 142, 43, 0.72);
+      border-radius: 999px;
+      background: rgba(17, 38, 19, 0.94);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
+      color: #fff;
+      backdrop-filter: blur(8px);
+    }
+
+    .language-switcher__label {
+      padding: 0 8px 0 10px;
+      font-family: "Urbanist", sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .language-switcher button {
+      min-width: 38px;
+      min-height: 36px;
+      padding: 0 9px;
+      border: 0;
+      border-radius: 999px;
+      background: transparent;
+      color: #fff;
+      cursor: pointer;
+      font-family: "Bayon", sans-serif;
+      font-size: 15px;
+      line-height: 1;
+      transition: background-color 160ms ease, color 160ms ease;
+    }
+
+    .language-switcher button[aria-pressed="true"] {
+      background: var(--color-orange);
+      color: var(--color-green-dark);
+    }
+
+    .language-switcher button:focus-visible {
+      outline: 2px solid #fff;
+      outline-offset: 2px;
+    }
+
     .hero {
       position: relative;
       isolation: isolate;
@@ -369,65 +418,72 @@
     </defs>
   </svg>
   <header class="site-header">
-    <nav class="main-nav" aria-label="Navegação principal">
-      <a class="is-current" href="#inicio" aria-current="page">Home</a>
-      <a href="#sobre">Sobre</a>
-      <a href="#obras">Obras</a>
-      <a href="#ingresso">Ingresso</a>
+    <nav class="main-nav" aria-label="Navegação principal" data-i18n-aria-label="nav.label">
+      <a class="is-current" href="#inicio" aria-current="page" data-i18n="nav.home">Home</a>
+      <a href="#sobre" data-i18n="nav.about">Sobre</a>
+      <a href="#obras" data-i18n="nav.works">Obras</a>
+      <a href="#ingresso" data-i18n="nav.tickets">Ingresso</a>
     </nav>
   </header>
 
+  <nav class="language-switcher" aria-label="Idioma" data-i18n-aria-label="language.label">
+    <span class="language-switcher__label" data-i18n="language.label">Idioma</span>
+    <button type="button" lang="pt-BR" data-language="pt" aria-label="Português" aria-pressed="true">PT</button>
+    <button type="button" lang="en" data-language="en" aria-label="English" aria-pressed="false">EN</button>
+    <button type="button" lang="es" data-language="es" aria-label="Español" aria-pressed="false">ES</button>
+  </nav>
+
   <main>
-    <section class="hero" id="inicio" aria-label="Destaques do Museu das Favelas" aria-roledescription="carrossel">
+    <section class="hero" id="inicio" aria-label="Destaques do Museu das Favelas" data-i18n-aria-label="hero.label" aria-roledescription="carrossel" data-i18n-aria-roledescription="carousel.role">
       <div class="hero-slides" aria-live="off">
         <img class="hero-slide is-active" src="img/hero-1.webp" alt="" aria-hidden="false">
         <img class="hero-slide" src="img/hero-2.webp" alt="" aria-hidden="true">
         <img class="hero-slide" src="img/hero-3.webp" alt="" aria-hidden="true">
       </div>
       <div class="hero-content">
-        <img class="hero-logo" src="img/logo-museu.png" alt="Museu das Favelas">
-        <a class="hero-button" href="#sobre">Venha nos conhecer</a>
+        <img class="hero-logo" src="img/logo-museu.png" alt="Museu das Favelas" data-i18n-alt="museum.name">
+        <a class="hero-button" href="#sobre" data-i18n="hero.cta">Venha nos conhecer</a>
       </div>
-      <div class="hero-progress" role="group" aria-label="Selecionar destaque">
-        <button type="button" class="is-active" aria-label="Mostrar destaque 1" aria-pressed="true"></button>
-        <button type="button" aria-label="Mostrar destaque 2" aria-pressed="false"></button>
-        <button type="button" aria-label="Mostrar destaque 3" aria-pressed="false"></button>
+      <div class="hero-progress" role="group" aria-label="Selecionar destaque" data-i18n-aria-label="carousel.label">
+        <button type="button" class="is-active" aria-label="Mostrar destaque 1" data-i18n-aria-label="carousel.slide1" aria-pressed="true"></button>
+        <button type="button" aria-label="Mostrar destaque 2" data-i18n-aria-label="carousel.slide2" aria-pressed="false"></button>
+        <button type="button" aria-label="Mostrar destaque 3" data-i18n-aria-label="carousel.slide3" aria-pressed="false"></button>
       </div>
     </section>
 
     <section class="about" id="sobre">
       <div class="about-copy">
         <span class="section-accent" aria-hidden="true"></span>
-        <h1>Sobre o Museu</h1>
+        <h1 data-i18n="about.title">Sobre o Museu</h1>
         <p>
-          O Museu das Favelas é um espaço de memória, arte e conhecimento,
-          dedicado a contar as múltiplas histórias de diversas favelas do Brasil.
+          <span data-i18n="about.paragraph1">O Museu das Favelas é um espaço de memória, arte e conhecimento,
+          dedicado a contar as múltiplas histórias de diversas favelas do Brasil.</span>
         </p>
         <p>
-          Suas exposições e narrativas valorizam as culturas, os saberes e as
+          <span data-i18n="about.paragraph2">Suas exposições e narrativas valorizam as culturas, os saberes e as
           experiências que nascem nos territórios, ampliando o espaço para que
-          diferentes vozes contem suas próprias histórias.
+          diferentes vozes contem suas próprias histórias.</span>
         </p>
         <blockquote class="about-quote">
-          “Toda comunidade guarda histórias que merecem ser vistas, ouvidas e lembradas.”
+          <span data-i18n="about.quote">“Toda comunidade guarda histórias que merecem ser vistas, ouvidas e lembradas.”</span>
           <footer class="about-quote__attribution">
-            Lia Raiz - Curadora de Memórias e Vozes do Território
+            <span data-i18n="about.attribution">Lia Raiz - Curadora de Memórias e Vozes do Território</span>
           </footer>
         </blockquote>
       </div>
-      <img class="about-image" src="img/museum-scene-1.webp" alt="Jovens observam a comunidade no alto de uma favela">
+      <img class="about-image" src="img/museum-scene-1.webp" alt="Jovens observam a comunidade no alto de uma favela" data-i18n-alt="about.imageAlt">
     </section>
 
-    <div class="word-marquee" role="img" aria-label="Arte, cultura, favela e identidade">
+    <div class="word-marquee" role="img" aria-label="Arte, cultura, favela e identidade" data-i18n-aria-label="marquee.artLabel">
       <div class="word-marquee__track" aria-hidden="true">
         <div class="word-marquee__group">
-          <span>ARTE</span><span>CULTURA</span><span>FAVELA</span><span>IDENTIDADE</span>
+          <span data-i18n="marquee.art">ARTE</span><span data-i18n="marquee.culture">CULTURA</span><span data-i18n="marquee.favela">FAVELA</span><span data-i18n="marquee.identity">IDENTIDADE</span>
         </div>
         <div class="word-marquee__group">
-          <span>ARTE</span><span>CULTURA</span><span>FAVELA</span><span>IDENTIDADE</span>
+          <span data-i18n="marquee.art">ARTE</span><span data-i18n="marquee.culture">CULTURA</span><span data-i18n="marquee.favela">FAVELA</span><span data-i18n="marquee.identity">IDENTIDADE</span>
         </div>
         <div class="word-marquee__group">
-          <span>ARTE</span><span>CULTURA</span><span>FAVELA</span><span>IDENTIDADE</span>
+          <span data-i18n="marquee.art">ARTE</span><span data-i18n="marquee.culture">CULTURA</span><span data-i18n="marquee.favela">FAVELA</span><span data-i18n="marquee.identity">IDENTIDADE</span>
         </div>
       </div>
     </div>
@@ -435,24 +491,24 @@
     <section class="works-section" id="obras" aria-labelledby="works-title">
       <div class="works-heading">
         <span class="works-accent" aria-hidden="true"></span>
-        <h1 id="works-title">Principais Obras</h1>
+        <h1 id="works-title" data-i18n="works.title">Principais Obras</h1>
         <p class="works-description">
-          Conheça obras que celebram a criatividade, a memória e as vivências das favelas brasileiras.
+          <span data-i18n="works.description">Conheça obras que celebram a criatividade, a memória e as vivências das favelas brasileiras.</span>
         </p>
       </div>
       <div class="works-list" id="works-list"></div>
     </section>
 
-    <div class="word-marquee word-marquee--reverse" role="img" aria-label="Visita, encontro, comunidade e diversidade">
+    <div class="word-marquee word-marquee--reverse" role="img" aria-label="Visita, encontro, comunidade e diversidade" data-i18n-aria-label="marquee.visitLabel">
       <div class="word-marquee__track" aria-hidden="true">
         <div class="word-marquee__group">
-          <span>VISITA</span><span>ENCONTRO</span><span>COMUNIDADE</span><span>DIVERSIDADE</span>
+          <span data-i18n="marquee.visit">VISITA</span><span data-i18n="marquee.meeting">ENCONTRO</span><span data-i18n="marquee.community">COMUNIDADE</span><span data-i18n="marquee.diversity">DIVERSIDADE</span>
         </div>
         <div class="word-marquee__group">
-          <span>VISITA</span><span>ENCONTRO</span><span>COMUNIDADE</span><span>DIVERSIDADE</span>
+          <span data-i18n="marquee.visit">VISITA</span><span data-i18n="marquee.meeting">ENCONTRO</span><span data-i18n="marquee.community">COMUNIDADE</span><span data-i18n="marquee.diversity">DIVERSIDADE</span>
         </div>
         <div class="word-marquee__group">
-          <span>VISITA</span><span>ENCONTRO</span><span>COMUNIDADE</span><span>DIVERSIDADE</span>
+          <span data-i18n="marquee.visit">VISITA</span><span data-i18n="marquee.meeting">ENCONTRO</span><span data-i18n="marquee.community">COMUNIDADE</span><span data-i18n="marquee.diversity">DIVERSIDADE</span>
         </div>
       </div>
     </div>
@@ -460,17 +516,18 @@
     <section class="ticket-section" id="ingresso" aria-labelledby="ticket-title">
       <div class="ticket-intro">
         <span class="ticket-accent" aria-hidden="true"></span>
-        <h1 id="ticket-title">Comprar ingresso</h1>
+        <h1 id="ticket-title" data-i18n="tickets.title">Comprar ingresso</h1>
         <p>
-          Antes de adquirir seu ingresso, confira as principais regras de
+          <span data-i18n="tickets.description">Antes de adquirir seu ingresso, confira as principais regras de
           convivência no Museu. Após isso, responda um quiz rápido para liberar
-          sua compra.
+          sua compra.</span>
         </p>
       </div>
-      <button class="ticket-start-button" type="button">Iniciar o quiz</button>
+      <button class="ticket-start-button" type="button" data-i18n="tickets.start">Iniciar o quiz</button>
     </section>
   </main>
   <script src="carousel.js"></script>
+  <script src="idiomas.js"></script>
   <script src="obras.js"></script>
 </body>
 

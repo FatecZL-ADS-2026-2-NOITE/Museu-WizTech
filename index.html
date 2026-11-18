@@ -206,10 +206,16 @@
       color: #000;
     }
 
-    html.high-contrast .ticket-start-button:hover {
+    html.high-contrast .ticket-start-button:hover:not(:disabled) {
       border-color: #fff;
       background: #fff;
       color: #000;
+    }
+
+    html.high-contrast .ticket-start-button:disabled {
+      border-color: #777;
+      background: #222;
+      color: #bbb;
     }
 
     html.high-contrast .accessibility-controls,
@@ -695,13 +701,96 @@
           sua compra.</span>
         </p>
       </div>
-      <button class="ticket-start-button" type="button" data-i18n="tickets.start">Iniciar o quiz</button>
+      <section class="rules-reader" aria-labelledby="rules-reader-title">
+        <div class="rules-reader__heading">
+          <h2 id="rules-reader-title" data-i18n="rules.title">Regras do Museu</h2>
+          <p data-i18n="rules.description">Explore as cinco categorias para consultar as regras de convivência.</p>
+        </div>
+        <div class="rules-reader__layout">
+          <div
+            class="rules-reader__categories"
+            id="rules-categories"
+            role="tablist"
+            aria-label="Categorias das regras"
+            data-i18n-aria-label="rules.categoriesLabel">
+          </div>
+          <article
+            class="rules-reader__panel"
+            id="rules-panel"
+            role="tabpanel"
+            aria-live="polite"
+            tabindex="0">
+            <p class="rules-reader__position" id="rules-position"></p>
+            <h3 class="rules-reader__category-title" id="rules-category-title"></h3>
+            <div class="rules-reader__rule-navigation">
+              <button
+                type="button"
+                class="rules-reader__rule-step"
+                id="rules-rule-previous"
+                aria-label="Regra anterior"
+                data-i18n-aria-label="rules.previousRule">
+                <span aria-hidden="true">←</span>
+              </button>
+              <div class="rules-reader__rule-copy">
+                <p class="rules-reader__rule-position" id="rules-rule-position"></p>
+                <p class="rules-reader__placeholder" id="rules-placeholder"></p>
+                <label class="rules-reader__acknowledgement" for="rules-acknowledge" hidden>
+                  <input id="rules-acknowledge" type="checkbox">
+                  <span data-i18n="rules.acknowledge">Li e entendi as regras desta categoria</span>
+                </label>
+              </div>
+              <button
+                type="button"
+                class="rules-reader__rule-step"
+                id="rules-rule-next"
+                aria-label="Próxima regra"
+                data-i18n-aria-label="rules.nextRule">
+                <span aria-hidden="true">→</span>
+              </button>
+            </div>
+          </article>
+        </div>
+        <div class="rules-reader__footer">
+          <div class="rules-reader__progress-wrap">
+            <span class="rules-reader__progress-label" data-i18n="rules.progressLabel">Progresso de leitura</span>
+            <div
+              class="rules-reader__progress"
+              id="rules-progress"
+              role="progressbar"
+              aria-label="Progresso de leitura"
+              data-i18n-aria-label="rules.progressLabel"
+              aria-valuemin="0"
+              aria-valuemax="5"
+              aria-valuenow="0">
+              <span class="rules-reader__progress-fill"></span>
+            </div>
+            <p class="rules-reader__progress-text" id="rules-progress-text" aria-live="polite"></p>
+          </div>
+          <div class="rules-reader__pagination">
+            <button type="button" class="rules-reader__step" id="rules-previous" data-i18n="rules.previousCategory">Categoria anterior</button>
+            <button type="button" class="rules-reader__step rules-reader__step--next" id="rules-next" data-i18n="rules.nextCategory">Próxima categoria</button>
+          </div>
+        </div>
+      </section>
+      <div class="ticket-quiz-gate">
+        <p id="rules-quiz-hint" class="ticket-quiz-hint" aria-live="polite"></p>
+        <button
+          class="ticket-start-button"
+          id="ticket-start-button"
+          type="button"
+          aria-describedby="rules-quiz-hint"
+          data-i18n="tickets.start"
+          disabled>
+          Iniciar o quiz
+        </button>
+      </div>
     </section>
   </main>
   <script src="carousel.js"></script>
   <script src="idiomas.js"></script>
   <script src="acessibilidade.js"></script>
   <script src="obras.js"></script>
+  <script src="regras.js"></script>
 </body>
 
 </html>

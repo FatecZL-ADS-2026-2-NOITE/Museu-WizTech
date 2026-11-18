@@ -38,7 +38,7 @@ const obras = [
     image: "img/espelhos.webp",
     imageAlt: "Instalação artística do projeto Espelhos",
     imageSide: "right",
-  },
+  },  
 ];
 
 const worksList = document.querySelector("#works-list");

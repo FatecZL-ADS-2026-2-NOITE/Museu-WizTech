@@ -68,7 +68,7 @@
       <section class="quiz-progress-card" aria-labelledby="quiz-progress-label">
         <div class="quiz-progress-card__heading">
           <span id="quiz-progress-label" data-i18n="quiz.progressLabel">Progresso do quiz</span>
-          <strong data-i18n="quiz.progressValue">Pergunta 1 de 5</strong>
+          <strong data-i18n="quiz.progressValue">Pergunta {current} de {total}</strong>
         </div>
         <div
           class="quiz-progress"
@@ -87,27 +87,44 @@
           <span class="quiz-question-card__number" aria-hidden="true">01</span>
           <span class="quiz-placeholder-badge" data-i18n="quiz.placeholderBadge">PLACEHOLDER</span>
         </div>
-        <p class="quiz-question-card__label" data-i18n="quiz.questionLabel">PERGUNTA 01</p>
-        <h2 id="quiz-question" data-i18n="quiz.questionPlaceholder">Placeholder para a pergunta sobre as regras do Museu.</h2>
-        <p class="quiz-question-card__instruction" data-i18n="quiz.answerInstruction">As alternativas desta pergunta aparecerão aqui.</p>
+        <p class="quiz-question-card__label" data-i18n="quiz.questionLabel">PERGUNTA 1</p>
+        <h2 id="quiz-question" tabindex="-1" data-i18n="quiz.questionPlaceholder">Placeholder da pergunta 1.</h2>
+        <p class="quiz-question-card__instruction" data-i18n="quiz.answerInstruction">Selecione uma alternativa. Você pode mudar a resposta antes de avançar.</p>
 
-        <ul class="quiz-options" aria-label="Alternativas da pergunta" data-i18n-aria-label="quiz.optionsLabel">
-          <li class="quiz-option">
-            <span class="quiz-option__marker" aria-hidden="true"></span>
-            <span data-i18n="quiz.option1">Placeholder da alternativa 1</span>
+        <ul id="quiz-options" class="quiz-options" aria-label="Alternativas da pergunta" data-i18n-aria-label="quiz.optionsLabel">
+          <li>
+            <label class="quiz-option">
+              <input type="radio" name="quiz-answer" value="0">
+              <span class="quiz-option__marker" aria-hidden="true"></span>
+              <span data-i18n="quiz.option1">Placeholder da alternativa A</span>
+            </label>
           </li>
-          <li class="quiz-option">
-            <span class="quiz-option__marker" aria-hidden="true"></span>
-            <span data-i18n="quiz.option2">Placeholder da alternativa 2</span>
+          <li>
+            <label class="quiz-option">
+              <input type="radio" name="quiz-answer" value="1">
+              <span class="quiz-option__marker" aria-hidden="true"></span>
+              <span data-i18n="quiz.option2">Placeholder da alternativa B</span>
+            </label>
           </li>
-          <li class="quiz-option">
-            <span class="quiz-option__marker" aria-hidden="true"></span>
-            <span data-i18n="quiz.option3">Placeholder da alternativa 3</span>
+          <li>
+            <label class="quiz-option">
+              <input type="radio" name="quiz-answer" value="2">
+              <span class="quiz-option__marker" aria-hidden="true"></span>
+              <span data-i18n="quiz.option3">Placeholder da alternativa C</span>
+            </label>
           </li>
         </ul>
 
-        <p class="quiz-question-card__note" data-i18n="quiz.note">O conteúdo do quiz será adicionado em uma próxima etapa.</p>
+        <p id="quiz-feedback" class="quiz-feedback" role="status" aria-live="polite"></p>
+        <p class="quiz-question-card__note" data-i18n="quiz.note">Textos e gabarito provisórios. O quiz já valida as respostas.</p>
       </article>
+
+      <section id="quiz-result" class="quiz-result" aria-labelledby="quiz-result-title" hidden>
+        <h2 id="quiz-result-title" tabindex="-1" data-i18n="quiz.resultTitle">Resultado do quiz</h2>
+        <p id="quiz-result-score" class="quiz-result__score"></p>
+        <p id="quiz-result-message"></p>
+        <div id="quiz-result-actions" class="quiz-result__actions"></div>
+      </section>
 
       <footer class="quiz-actions">
         <a class="quiz-back quiz-back--bottom" href="index.html#ingresso" data-i18n="quiz.backToRules">Voltar às regras</a>
@@ -121,6 +138,7 @@
 
   <script src="idiomas.js"></script>
   <script src="acessibilidade.js"></script>
+  <script src="quiz.js"></script>
 </body>
 
 </html>

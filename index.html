@@ -18,11 +18,28 @@
       --about-height: clamp(280px, 40svh, 380px);
       --hero-logo-width: clamp(198px, min(30.5vw, 40svh), 560px);
       --hero-button-width: clamp(139px, min(21.5vw, 22svh), 310px);
+      --font-size-offset: 0px;
       font-family: "Urbanist", sans-serif;
       color: #080808;
       background: #ededed;
       font-synthesis: none;
       text-rendering: optimizeLegibility;
+    }
+
+    html[data-font-size="smaller"] {
+      --font-size-offset: -1px;
+    }
+
+    html[data-font-size="large"] {
+      --font-size-offset: 1px;
+    }
+
+    html[data-font-size="larger"] {
+      --font-size-offset: 2px;
+    }
+
+    html[data-font-size="largest"] {
+      --font-size-offset: 3px;
     }
 
     *,
@@ -67,7 +84,7 @@
     .main-nav a {
       color: #fff;
       font-family: "Bayon", sans-serif;
-      font-size: clamp(12px, 1.8vw, 26px);
+      font-size: calc(clamp(12px, 1.8vw, 26px) + var(--font-size-offset));
       line-height: 1;
       text-decoration: none;
       text-transform: uppercase;
@@ -78,6 +95,140 @@
       text-decoration: underline;
       text-decoration-thickness: 1px;
       text-underline-offset: 3px;
+    }
+
+    .accessibility-controls {
+      position: absolute;
+      right: clamp(12px, 2vw, 28px);
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      padding: 4px;
+      border: 1px solid rgba(255, 142, 43, 0.72);
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.22);
+    }
+
+    .accessibility-controls button {
+      min-width: 34px;
+      min-height: 32px;
+      padding: 0 7px;
+      border: 0;
+      border-radius: 999px;
+      background: transparent;
+      color: #fff;
+      cursor: pointer;
+      font-family: "Bayon", sans-serif;
+      font-size: 15px;
+      line-height: 1;
+    }
+
+    .accessibility-controls button[aria-pressed="true"] {
+      background: var(--color-orange);
+      color: var(--color-green-dark);
+    }
+
+    .accessibility-controls button:disabled {
+      cursor: not-allowed;
+      opacity: 0.48;
+    }
+
+    .accessibility-controls button:focus-visible {
+      outline: 2px solid #fff;
+      outline-offset: 2px;
+    }
+
+    :root.high-contrast {
+      --color-orange: #ffff00;
+      --color-green-dark: #000;
+      --color-green: #000;
+      color-scheme: dark;
+      color: #fff;
+      background: #000;
+    }
+
+    html.high-contrast {
+      scrollbar-color: #ffff00 #000;
+    }
+
+    html.high-contrast ::-webkit-scrollbar-track {
+      background: #000;
+    }
+
+    html.high-contrast ::-webkit-scrollbar-thumb {
+      border-color: #000;
+      background: #ffff00;
+    }
+
+    html.high-contrast body,
+    html.high-contrast .about,
+    html.high-contrast .ticket-section,
+    html.high-contrast .word-marquee,
+    html.high-contrast .works-section {
+      background: #000;
+      color: #fff;
+    }
+
+    html.high-contrast .site-header {
+      border-bottom: 1px solid #fff;
+      background: #000;
+    }
+
+    html.high-contrast .about p,
+    html.high-contrast .ticket-intro p,
+    html.high-contrast .work-card__copy p {
+      color: #fff;
+    }
+
+    html.high-contrast .about-quote {
+      border-left-color: #ffff00;
+      color: #ffff00;
+    }
+
+    html.high-contrast .word-marquee__group {
+      color: #ffff00;
+    }
+
+    html.high-contrast .work-card {
+      border-color: #fff;
+      background: #000;
+      box-shadow: none;
+    }
+
+    html.high-contrast .work-card__copy h2 {
+      color: #ffff00;
+    }
+
+    html.high-contrast .hero-button,
+    html.high-contrast .ticket-start-button {
+      border-color: #ffff00;
+      background: #ffff00;
+      color: #000;
+    }
+
+    html.high-contrast .ticket-start-button:hover {
+      border-color: #fff;
+      background: #fff;
+      color: #000;
+    }
+
+    html.high-contrast .accessibility-controls,
+    html.high-contrast .language-switcher {
+      border-color: #ffff00;
+      background: #000;
+    }
+
+    html.high-contrast .hero-progress button {
+      background: #888;
+    }
+
+    html.high-contrast .hero-progress button.is-active {
+      background: #fff;
+    }
+
+    html.high-contrast :focus-visible {
+      outline: 3px solid #ffff00 !important;
+      outline-offset: 3px;
     }
 
     .language-switcher {
@@ -200,7 +351,7 @@
       background: var(--color-orange);
       color: #fff;
       font-family: "Bayon", sans-serif;
-      font-size: clamp(10px, 1.55vw, 22px);
+      font-size: calc(clamp(10px, 1.55vw, 22px) + var(--font-size-offset));
       text-decoration: none;
       text-transform: uppercase;
     }
@@ -254,7 +405,7 @@
     .about h1 {
       margin: 0 0 3px;
       font-family: "Bungee", sans-serif;
-      font-size: clamp(23px, 3.6vw, 52px);
+      font-size: calc(clamp(23px, 3.6vw, 52px) + var(--font-size-offset));
       font-weight: 400;
       line-height: 1.1;
       text-transform: uppercase;
@@ -264,7 +415,7 @@
       max-width: 70ch;
       margin: 0;
       color: #353535;
-      font-size: clamp(12px, 1.9vw, 27px);
+      font-size: calc(clamp(12px, 1.9vw, 27px) + var(--font-size-offset));
       line-height: 1.2;
     }
 
@@ -278,7 +429,7 @@
       padding-left: clamp(10px, 1.2vw, 18px);
       border-left: 3px solid var(--color-orange);
       color: var(--color-green-dark);
-      font-size: clamp(13px, 1.5vw, 21px);
+      font-size: calc(clamp(13px, 1.5vw, 21px) + var(--font-size-offset));
       font-style: italic;
       font-weight: 700;
       line-height: 1.25;
@@ -288,13 +439,13 @@
       display: flex;
       flex-direction: column;
       margin-top: clamp(5px, 0.6vw, 8px);
-      font-size: 0.82em;
+      font-size: calc(0.82em + var(--font-size-offset));
       font-style: normal;
       font-weight: 600;
     }
 
     .about-quote__attribution span {
-      font-size: 0.88em;
+      font-size: calc(0.88em + var(--font-size-offset));
       font-weight: 400;
     }
 
@@ -320,16 +471,32 @@
       }
     }
 
+    @media (max-width: 760px) {
+      :root {
+        --header-height: 76px;
+      }
+
+      .site-header {
+        flex-direction: column;
+        gap: 4px;
+        padding: 6px 12px;
+      }
+
+      .accessibility-controls {
+        position: static;
+      }
+    }
+
     @media (max-width: 520px) {
       :root {
-        --header-height: 44px;
+        --header-height: 76px;
         --about-height: min(320px, 40svh);
         --hero-logo-width: clamp(170px, min(60vw, 38svh), 245px);
         --hero-button-width: clamp(139px, min(55vw, 21svh), 245px);
       }
 
       .site-header {
-        height: 44px;
+        height: var(--header-height);
       }
 
       .main-nav {
@@ -337,7 +504,7 @@
       }
 
       .main-nav a {
-        font-size: 13px;
+        font-size: calc(13px + var(--font-size-offset));
       }
 
       .hero-slide {
@@ -348,7 +515,7 @@
         min-height: clamp(35px, 7svh, 48px);
         margin-top: clamp(10px, 2svh, 14px);
         padding: 0 16px;
-        font-size: 10px;
+        font-size: calc(10px + var(--font-size-offset));
       }
 
       .about {
@@ -359,17 +526,17 @@
       }
 
       .about h1 {
-        font-size: 24px;
+        font-size: calc(24px + var(--font-size-offset));
       }
 
       .about p {
         max-width: none;
-        font-size: 14px;
+        font-size: calc(14px + var(--font-size-offset));
       }
 
       .about-quote {
         max-width: 390px;
-        font-size: 15px;
+        font-size: calc(15px + var(--font-size-offset));
       }
 
       .about-image {
@@ -385,7 +552,7 @@
       }
 
       .hero-button {
-        font-size: clamp(22px, 1.5vw, 28px);
+        font-size: calc(clamp(22px, 1.5vw, 28px) + var(--font-size-offset));
       }
     }
   </style>
@@ -424,6 +591,11 @@
       <a href="#obras" data-i18n="nav.works">Obras</a>
       <a href="#ingresso" data-i18n="nav.tickets">Ingresso</a>
     </nav>
+    <div class="accessibility-controls" role="group" aria-label="Opções de acessibilidade" data-i18n-aria-label="accessibility.group">
+      <button type="button" data-font-size="decrease" aria-label="Diminuir tamanho da fonte" data-i18n-aria-label="accessibility.decrease">A−</button>
+      <button type="button" data-font-size="increase" aria-label="Aumentar tamanho da fonte" data-i18n-aria-label="accessibility.increase">A+</button>
+      <button type="button" class="contrast-toggle" aria-label="Ativar alto contraste" aria-pressed="false">◐</button>
+    </div>
   </header>
 
   <nav class="language-switcher" aria-label="Idioma" data-i18n-aria-label="language.label">
@@ -528,6 +700,7 @@
   </main>
   <script src="carousel.js"></script>
   <script src="idiomas.js"></script>
+  <script src="acessibilidade.js"></script>
   <script src="obras.js"></script>
 </body>
 

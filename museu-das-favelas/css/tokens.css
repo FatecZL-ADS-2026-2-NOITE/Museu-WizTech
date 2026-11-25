@@ -30,6 +30,7 @@
 
   --color-focus: #155EEF;
   --color-placeholder-bg: #E8DED0;
+  --color-bg-glow: rgb(230 182 74 / 0.16);
 
   /* ---------- Tipografia ---------- */
   --font-body: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -102,6 +103,7 @@ html[data-contrast="high"] {
 
   --color-focus: #00E5FF;
   --color-placeholder-bg: #000000;
+  --color-bg-glow: transparent;
 
   --border-w: 2px;
   --focus-w: 4px;

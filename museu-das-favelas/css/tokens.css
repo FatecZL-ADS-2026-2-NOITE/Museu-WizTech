@@ -1,98 +1,83 @@
 /*
- * TOKENS DE DESIGN: único ponto de definição visual da aplicação.
- *
- * Para aplicar a identidade visual oficial do Museu, altere SOMENTE este arquivo:
- *   - cores (bloco "Cores")
- *   - tipografia (bloco "Tipografia" e o @font-face de exemplo abaixo)
- *   - raios, sombras, espaçamentos
- * Ícones: assets/icons/icons.js | Logotipo e imagens: content/images.js + assets/images/
- *
- * ATENÇÃO: todos os valores abaixo são PROVISÓRIOS. Não foram extraídos do manual de marca do
- * Museu das Favelas (não disponível durante o desenvolvimento). Ao trocar cores, confira o
- * contraste (WCAG 2.1 AA): 4,5:1 para texto e 3:1 para bordas de componentes e foco.
+ * TOKENS DE DESIGN.
+ * A paleta abaixo é uma proposta visual provisória, não uma reprodução do manual
+ * oficial de identidade do Museu das Favelas (que não acompanha este projeto).
+ * Ajustes de cor, tipografia, espaçamento e forma devem começar por este arquivo.
  */
 
-/* Exemplo para fonte própria (descomente e ajuste quando houver arquivo e licença web):
-@font-face {
-  font-family: "Fonte do Museu";
-  src: url("../assets/fonts/fonte-do-museu.woff2") format("woff2");
-  font-weight: 400 800;
-  font-display: swap;
-}
-*/
-
 :root {
-  /* ---------- Cores (provisórias) ---------- */
-  --color-bg: #FBF7F0;
-  --color-surface: #FFFFFF;
-  --color-surface-alt: #F1E9DC;
-  --color-text: #1E1A16;
-  --color-text-muted: #5A5148;
+  /* ---------- Cores: paleta quente, editorial e de alto contraste ---------- */
+  --color-bg: #F7F1E8;
+  --color-surface: #FFFDF9;
+  --color-surface-alt: #F0E5D7;
+  --color-text: #241B17;
+  --color-text-muted: #64564C;
 
-  --color-primary: #8F2D12;
-  --color-primary-hover: #74240E;
+  --color-primary: #8E2E1B;
+  --color-primary-hover: #702317;
   --color-on-primary: #FFFFFF;
 
-  --color-accent: #F2B705;      /* detalhes decorativos (nunca como cor de texto) */
-  --color-on-accent: #1E1A16;
+  --color-accent: #E6B64A;
+  --color-on-accent: #241B17;
 
-  --color-border: #7D7062;      /* bordas de componentes interativos (>= 3:1) */
-  --color-border-soft: #DDD2C2; /* divisórias decorativas */
+  --color-border: #89796B;
+  --color-border-soft: #DED1C2;
 
-  --color-success: #1B6B3A;
-  --color-success-bg: #E6F4EA;
-  --color-error: #A4262C;
-  --color-error-bg: #FDECEA;
+  --color-success: #28613E;
+  --color-success-bg: #E7F1E8;
+  --color-error: #A3322C;
+  --color-error-bg: #F8E8E5;
 
-  --color-focus: #0B57D0;
-  --color-placeholder-bg: #EFE6D8;
+  --color-focus: #155EEF;
+  --color-placeholder-bg: #E8DED0;
 
-  /* ---------- Tipografia (provisória: fontes do sistema) ---------- */
-  --font-body: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --font-display: var(--font-body);
+  /* ---------- Tipografia ---------- */
+  --font-body: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-display: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
 
   --text-xs: 0.8125rem;
   --text-sm: 0.9375rem;
-  --text-base: 1.125rem;
-  --text-lg: 1.25rem;
-  --text-xl: 1.5rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.375rem;
   --text-2xl: 1.875rem;
-  --text-3xl: 2.25rem;
+  --text-3xl: 2.5rem;
 
   --weight-regular: 400;
-  --weight-bold: 700;
-  --weight-heavy: 800;
+  --weight-bold: 650;
+  --weight-heavy: 750;
 
-  --leading-body: 1.55;
-  --leading-heading: 1.2;
+  --leading-body: 1.65;
+  --leading-heading: 1.12;
 
   /* ---------- Espaçamento, forma e layout ---------- */
   --space-1: 0.25rem;
   --space-2: 0.5rem;
   --space-3: 0.75rem;
   --space-4: 1rem;
-  --space-5: 1.5rem;
-  --space-6: 2rem;
-  --space-7: 3rem;
+  --space-5: 1.25rem;
+  --space-6: 1.75rem;
+  --space-7: 2.5rem;
 
-  --gutter: 1rem;
-  --layout-max: 36rem;
-  --tap-size: 3rem;          /* área mínima de toque (48px com fonte padrão) */
+  --gutter: clamp(1rem, 4vw, 2rem);
+  --layout-max: 62rem;
+  --tap-size: 2.875rem;
 
-  --radius-sm: 0.5rem;
-  --radius-md: 0.875rem;
-  --radius-lg: 1.25rem;
-  --border-w: 2px;
+  --radius-sm: 0.625rem;
+  --radius-md: 1rem;
+  --radius-lg: 1.5rem;
+  --border-w: 1px;
   --focus-w: 3px;
 
-  --shadow-card: 0 1px 2px rgb(30 26 22 / 0.08), 0 6px 20px rgb(30 26 22 / 0.08);
+  --shadow-card: 0 2px 5px rgb(36 27 23 / 0.045), 0 16px 42px rgb(36 27 23 / 0.085);
+  --shadow-raised: 0 8px 24px rgb(36 27 23 / 0.12);
 
   /* ---------- Movimento ---------- */
-  --motion-fast: 150ms;
-  --motion-slow: 280ms;
+  --motion-fast: 180ms;
+  --motion-slow: 340ms;
 }
 
-/* ---------- Alto contraste (ativado pelo botão da barra de acessibilidade) ---------- */
+/* ---------- Alto contraste: mantém controles e estados bem distintos ---------- */
 html[data-contrast="high"] {
   --color-bg: #000000;
   --color-surface: #000000;
@@ -118,7 +103,8 @@ html[data-contrast="high"] {
   --color-focus: #00E5FF;
   --color-placeholder-bg: #000000;
 
-  --border-w: 3px;
+  --border-w: 2px;
   --focus-w: 4px;
   --shadow-card: none;
+  --shadow-raised: none;
 }

@@ -2,15 +2,13 @@
 
 *,
 *::before,
-*::after {
-  box-sizing: border-box;
-}
+*::after { box-sizing: border-box; }
 
-/* O multiplicador vem dos controles de fonte (js/a11y.js) e respeita o tamanho do navegador. */
 html {
   font-size: calc(100% * var(--font-scale, 1));
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -23,6 +21,8 @@ body {
   font-size: var(--text-base);
   line-height: var(--leading-body);
   overflow-wrap: break-word;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 h1,
@@ -32,50 +32,36 @@ h3 {
   font-family: var(--font-display);
   font-weight: var(--weight-heavy);
   line-height: var(--leading-heading);
+  letter-spacing: -0.025em;
 }
 
 h1 { font-size: var(--text-2xl); }
 h2 { font-size: var(--text-xl); }
 h3 { font-size: var(--text-lg); }
-
 p { margin: 0; }
 
-ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
+ul { margin: 0; padding: 0; list-style: none; }
 
 a {
   color: var(--color-primary);
-  text-underline-offset: 0.2em;
+  text-underline-offset: 0.22em;
+  text-decoration-thickness: 0.08em;
 }
 
-html[data-contrast="high"] a { color: var(--color-primary); }
+a:hover { text-decoration-thickness: 0.13em; }
 
-button {
-  font: inherit;
-  color: inherit;
-}
-
-img,
-svg {
-  max-width: 100%;
-}
-
+button { font: inherit; color: inherit; }
+img, svg { max-width: 100%; }
 [hidden] { display: none !important; }
 
-/* Foco sempre visível (WCAG 2.4.7): anel duplo para funcionar sobre fundos claros e escuros. */
 :focus-visible {
   outline: var(--focus-w) solid var(--color-focus);
-  outline-offset: 2px;
+  outline-offset: 3px;
   box-shadow: 0 0 0 calc(var(--focus-w) + 2px) var(--color-bg);
 }
 
-/* Elementos focados por script (títulos) não precisam de anel permanente. */
 [tabindex="-1"]:focus { outline: none; box-shadow: none; }
 
-/* Só para leitores de tela */
 .sr-only {
   position: absolute;
   width: 1px;
@@ -88,7 +74,6 @@ svg {
   border: 0;
 }
 
-/* Link "pular para o conteúdo" */
 .skip-link {
   position: absolute;
   left: var(--space-3);
@@ -99,11 +84,10 @@ svg {
   color: var(--color-on-primary);
   font-weight: var(--weight-bold);
   border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-raised);
 }
-
 .skip-link:focus { top: var(--space-3); }
 
-/* Ícones SVG inline (gerados por js/dom.js) */
 .icon {
   flex: none;
   width: 1.5rem;
@@ -115,7 +99,6 @@ svg {
   stroke-linejoin: round;
 }
 
-/* Respeita a preferência por menos movimento (WCAG 2.3.3 / boa prática) */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

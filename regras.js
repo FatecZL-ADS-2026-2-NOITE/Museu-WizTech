@@ -90,11 +90,12 @@
   };
 
   const updateRule = () => {
-    const rules = getTranslations().rules.rulePlaceholders;
+    const rules = getTranslations().rules.ruleGroups[activeIndex];
     rulePosition.textContent = getTranslations().rules.rulePosition
       .replace("{current}", String(activeRuleIndex + 1))
       .replace("{total}", String(rules.length));
-    placeholder.textContent = rules[activeRuleIndex];
+    placeholder.textContent = rules[activeRuleIndex].text;
+    placeholder.dataset.ruleId = rules[activeRuleIndex].id;
     acknowledgeCheckbox.checked = acknowledgedCategories.has(activeIndex);
     acknowledgeLabel.hidden = activeRuleIndex !== rules.length - 1;
     previousRuleButton.disabled = activeRuleIndex === 0;
@@ -175,7 +176,7 @@
   });
 
   nextRuleButton.addEventListener("click", () => {
-    const ruleCount = getTranslations().rules.rulePlaceholders.length;
+    const ruleCount = getTranslations().rules.ruleGroups[activeIndex].length;
     if (activeRuleIndex < ruleCount - 1) {
       activeRuleIndex += 1;
       updateRule();

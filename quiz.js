@@ -1,9 +1,11 @@
 (() => {
-  const questionCount = 5;
+  const getQuestions = () => {
+    const language = document.documentElement.dataset.language;
+    return window.museuI18n.translations[language].quiz.questions;
+  };
+  const questionCount = getQuestions().length;
   const passingScore = 3;
   const ticketUrl = "https://www.sympla.com.br/produtor/museudasfavelas";
-  // Temporary answer key for the placeholder questions.
-  const correctOptions = [0, 1, 2, 0, 1];
   const answers = Array(questionCount).fill(null);
 
   const progressCard = document.querySelector(".quiz-progress-card");
@@ -50,7 +52,7 @@
 
   const updateOptions = () => {
     const selectedOption = answers[currentIndex];
-    const correctOption = correctOptions[currentIndex];
+    const correctOption = getQuestions()[currentIndex].correctOption;
 
     optionsList.querySelectorAll("input[type=radio]").forEach((input) => {
       const optionIndex = Number(input.value);
@@ -89,12 +91,11 @@
   };
 
   const renderOptions = () => {
-    const ui = getUi();
-    const optionKeys = ["quiz.option1", "quiz.option2", "quiz.option3"];
+    const options = getQuestions()[currentIndex].options;
     const questionIndex = currentIndex;
     optionsList.replaceChildren();
 
-    optionKeys.forEach((key, optionIndex) => {
+    options.forEach((option, optionIndex) => {
       const item = document.createElement("li");
       const label = document.createElement("label");
       const input = document.createElement("input");
@@ -115,7 +116,7 @@
 
       marker.className = "quiz-option__marker";
       marker.setAttribute("aria-hidden", "true");
-      text.textContent = ui[key];
+      text.textContent = option;
       label.append(input, marker, text);
       item.append(label);
       optionsList.append(item);
@@ -126,11 +127,16 @@
 
   const renderQuestion = () => {
     const ui = getUi();
+    const question = getQuestions()[currentIndex];
     const current = currentIndex + 1;
     updateProgress(currentIndex);
     questionNumber.textContent = String(current).padStart(2, "0");
     questionLabel.textContent = format(ui["quiz.questionLabel"], { current });
-    questionHeading.textContent = format(ui["quiz.questionPlaceholder"], { current });
+    questionHeading.textContent = question.question;
+    questionCard.querySelector(".quiz-placeholder-badge").textContent =
+      window.museuI18n.translations[document.documentElement.dataset.language].ui[
+        "quiz.badge"
+      ];
     previousButton.textContent = ui["quiz.previous"];
     previousButton.disabled = currentIndex === 0;
     nextButton.textContent =
@@ -159,7 +165,8 @@
   const showResult = () => {
     const ui = getUi();
     const score = answers.reduce(
-      (total, answer, index) => total + Number(answer === correctOptions[index]),
+      (total, answer, index) =>
+        total + Number(answer === getQuestions()[index].correctOption),
       0,
     );
     const passed = score >= passingScore;

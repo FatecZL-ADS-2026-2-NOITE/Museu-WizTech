@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Conheça o Museu das Favelas e as histórias das favelas do Brasil.">
   <title>Museu das Favelas</title>
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <style>
@@ -19,6 +20,7 @@
       --hero-logo-width: clamp(198px, min(30.5vw, 40svh), 560px);
       --hero-button-width: clamp(139px, min(21.5vw, 22svh), 310px);
       --font-size-offset: 0px;
+      --body-font-increase: 1px;
       font-family: "Urbanist", sans-serif;
       color: #080808;
       background: #ededed;
@@ -84,7 +86,7 @@
     .main-nav a {
       color: #fff;
       font-family: "Bayon", sans-serif;
-      font-size: calc(clamp(12px, 1.8vw, 26px) + var(--font-size-offset));
+      font-size: calc(clamp(12px, 1.8vw, 26px) + var(--font-size-offset) + var(--body-font-increase));
       line-height: 1;
       text-decoration: none;
       text-transform: uppercase;
@@ -421,7 +423,7 @@
       max-width: 70ch;
       margin: 0;
       color: #353535;
-      font-size: calc(clamp(12px, 1.9vw, 27px) + var(--font-size-offset));
+      font-size: calc(clamp(12px, 1.9vw, 27px) + var(--font-size-offset) + var(--body-font-increase));
       line-height: 1.2;
     }
 
@@ -435,7 +437,7 @@
       padding-left: clamp(10px, 1.2vw, 18px);
       border-left: 3px solid var(--color-orange);
       color: var(--color-green-dark);
-      font-size: calc(clamp(13px, 1.5vw, 21px) + var(--font-size-offset));
+      font-size: calc(clamp(13px, 1.5vw, 21px) + var(--font-size-offset) + var(--body-font-increase));
       font-style: italic;
       font-weight: 700;
       line-height: 1.25;
@@ -510,7 +512,7 @@
       }
 
       .main-nav a {
-        font-size: calc(13px + var(--font-size-offset));
+        font-size: calc(13px + var(--font-size-offset) + var(--body-font-increase));
       }
 
       .hero-slide {
@@ -537,12 +539,12 @@
 
       .about p {
         max-width: none;
-        font-size: calc(14px + var(--font-size-offset));
+        font-size: calc(14px + var(--font-size-offset) + var(--body-font-increase));
       }
 
       .about-quote {
         max-width: 390px;
-        font-size: calc(15px + var(--font-size-offset));
+        font-size: calc(15px + var(--font-size-offset) + var(--body-font-increase));
       }
 
       .about-image {
@@ -564,10 +566,6 @@
   </style>
   <link
     href="https://fonts.googleapis.com/css2?family=Bayon&family=Bungee&family=Urbanist:wght@400;500;600;700;800&display=swap"
-    rel="preload"
-    as="style">
-  <link
-    href="https://fonts.googleapis.com/css2?family=Bayon&family=Bungee&family=Urbanist:wght@400;500;600;700;800&display=swap"
     rel="stylesheet"
     media="print"
     onload="this.onload=null;this.media='all'">
@@ -577,7 +575,6 @@
       rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
   </noscript>
-  <link rel="preload" href="styles.css" as="style">
   <link rel="stylesheet" href="styles.css" media="print" onload="this.onload=null;this.media='all'">
 </head>
 
@@ -791,12 +788,12 @@
   </main>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.14/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.14/dist/ScrollTrigger.min.js"></script>
-  <script src="carousel.js"></script>
-  <script src="idiomas.js"></script>
-  <script src="acessibilidade.js"></script>
-  <script src="obras.js"></script>
-  <script src="regras.js"></script>
-  <script src="animacoes.js"></script>
+  <script src="js/carousel.js"></script>
+  <script src="js/idiomas.js"></script>
+  <script src="js/acessibilidade.js"></script>
+  <script src="js/obras.js"></script>
+  <script src="js/regras.js"></script>
+  <script src="js/animacoes.js"></script>
 </body>
 
 </html>

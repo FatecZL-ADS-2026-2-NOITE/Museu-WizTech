@@ -182,6 +182,26 @@
           description: "Projeto que reúne produção sonora e texto para provocar reflexões sobre beleza, autoestima e identidade, questionando os padrões de beleza e os preconceitos associados às favelas.",
           imageAlt: "Instalação artística do projeto Espelhos",
         },
+        naoSouDaqui: {
+          title: "Não sou daqui — Oga Mendonça",
+          description: "Instalação que provoca reflexões sobre pertencimento, identidade e as relações entre as pessoas e os lugares onde vivem.",
+          imageAlt: "Instalação Não sou daqui",
+        },
+        beco: {
+          title: "Beco — Oga Mendonça",
+          description: "Instalação que representa os becos e caminhos das favelas, destacando os espaços de circulação, convivência e construção da vida comunitária.",
+          imageAlt: "Instalação Beco",
+        },
+        paraAlemDosNumeros: {
+          title: "Para além dos números — Coletivo Coletores e Marcela Marcucci",
+          description: "Videomapping que utiliza imagens e dados para refletir sobre as favelas, mostrando as histórias e experiências humanas que não podem ser reduzidas a estatísticas.",
+          imageAlt: "Videomapping Para além dos números",
+        },
+        filhoMestico: {
+          title: "Ato 0 – Filho Mestiço — O tal do Ale",
+          description: "Obra da série Histórias em caixas que aborda identidade, memória e experiências pessoais, relacionando histórias individuais com questões sociais e culturais.",
+          imageAlt: "Obra Ato 0 Filho Mestiço da série Histórias em caixas",
+        },
       },
     },
     en: {
@@ -366,6 +386,26 @@
           description: "A project combining sound and text to spark reflection on beauty, self-esteem, and identity, challenging beauty standards and prejudice associated with favelas.",
           imageAlt: "Art installation from the Mirrors project",
         },
+        naoSouDaqui: {
+          title: "Not from here — Oga Mendonça",
+          description: "An installation that reflects on belonging, identity, and the relationships between people and the places where they live.",
+          imageAlt: "Not from here installation",
+        },
+        beco: {
+          title: "Alley — Oga Mendonça",
+          description: "An installation representing the alleys and paths of favelas, highlighting spaces for movement, gathering, and community life.",
+          imageAlt: "Alley installation",
+        },
+        paraAlemDosNumeros: {
+          title: "Beyond the numbers — Coletivo Coletores and Marcela Marcucci",
+          description: "A video-mapping work that uses images and data to reflect on favelas, bringing forward human stories and experiences that cannot be reduced to statistics.",
+          imageAlt: "Beyond the numbers video-mapping installation",
+        },
+        filhoMestico: {
+          title: "Act 0 – Mestizo Son — O tal do Ale",
+          description: "A work from the Histórias em caixas series that explores identity, memory, and personal experiences, connecting individual stories to social and cultural issues.",
+          imageAlt: "Act 0 Mestizo Son artwork from the Histórias em caixas series",
+        },
       },
     },
     es: {
@@ -549,6 +589,26 @@
           title: "Espejos — Kayodê y Jailson de Souza e Silva",
           description: "Proyecto que reúne sonido y texto para promover reflexiones sobre belleza, autoestima e identidad, cuestionando los estándares de belleza y los prejuicios asociados a las favelas.",
           imageAlt: "Instalación artística del proyecto Espejos",
+        },
+        naoSouDaqui: {
+          title: "No soy de aquí — Oga Mendonça",
+          description: "Instalación que invita a reflexionar sobre la pertenencia, la identidad y las relaciones entre las personas y los lugares donde viven.",
+          imageAlt: "Instalación No soy de aquí",
+        },
+        beco: {
+          title: "El callejón — Oga Mendonça",
+          description: "Instalación que representa los callejones y caminos de las favelas, destacando los espacios de circulación, convivencia y construcción de la vida comunitaria.",
+          imageAlt: "Instalación El callejón",
+        },
+        paraAlemDosNumeros: {
+          title: "Más allá de los números — Coletivo Coletores y Marcela Marcucci",
+          description: "Obra de videomapping que utiliza imágenes y datos para reflexionar sobre las favelas y mostrar historias y experiencias humanas que no pueden reducirse a estadísticas.",
+          imageAlt: "Instalación de videomapping Más allá de los números",
+        },
+        filhoMestico: {
+          title: "Acto 0 – Hijo mestizo — O tal do Ale",
+          description: "Obra de la serie Histórias em caixas que aborda la identidad, la memoria y las experiencias personales, relacionando historias individuales con cuestiones sociales y culturales.",
+          imageAlt: "Obra Acto 0 Hijo mestizo de la serie Histórias em caixas",
         },
       },
     },

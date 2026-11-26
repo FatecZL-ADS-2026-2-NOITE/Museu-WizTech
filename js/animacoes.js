@@ -206,15 +206,13 @@
 
     const animateInteraction = (element, isActive) => {
       if (element.matches(workCardSelector)) {
-        const image = element.querySelector(".work-card__image");
-        if (image) {
-          gsap.to(image, {
-            scale: isActive ? 1.04 : 1,
-            duration: 0.45,
-            ease: "power2.out",
-            overwrite: "auto",
-          });
-        }
+        gsap.to(element, {
+          scale: isActive ? 1.035 : 1,
+          zIndex: isActive ? 2 : 0,
+          duration: 0.24,
+          ease: "power2.out",
+          overwrite: "auto",
+        });
         return;
       }
 

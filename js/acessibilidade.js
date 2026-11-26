@@ -3,7 +3,7 @@
   const decreaseButton = document.querySelector('[data-font-size="decrease"]');
   const increaseButton = document.querySelector('[data-font-size="increase"]');
   const contrastButton = document.querySelector(".contrast-toggle");
-  let fontSizeStep = 0;
+  let fontSizeStep = 3;
   let highContrastEnabled = false;
 
   const updateFontSize = () => {
@@ -13,11 +13,14 @@
       "1": "large",
       "2": "larger",
       "3": "largest",
+      "4": "extra-large",
+      "5": "extra-larger",
+      "6": "extra-largest",
     };
 
     root.dataset.fontSize = sizes[String(fontSizeStep)];
     decreaseButton.disabled = fontSizeStep <= -1;
-    increaseButton.disabled = fontSizeStep >= 3;
+    increaseButton.disabled = fontSizeStep >= 6;
   };
 
   const updateContrastLabel = () => {
@@ -35,7 +38,7 @@
   });
 
   increaseButton.addEventListener("click", () => {
-    fontSizeStep = Math.min(3, fontSizeStep + 1);
+    fontSizeStep = Math.min(6, fontSizeStep + 1);
     updateFontSize();
   });
 

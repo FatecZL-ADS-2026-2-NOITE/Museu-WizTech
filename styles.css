@@ -31,6 +31,18 @@ html[data-font-size="largest"] {
   --font-size-offset: 3px;
 }
 
+html[data-font-size="extra-large"] {
+  --font-size-offset: 4px;
+}
+
+html[data-font-size="extra-larger"] {
+  --font-size-offset: 5px;
+}
+
+html[data-font-size="extra-largest"] {
+  --font-size-offset: 6px;
+}
+
 * {
   box-sizing: border-box;
 }

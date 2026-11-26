@@ -148,6 +148,11 @@
     resultSection.hidden = true;
     actions.hidden = false;
     renderOptions();
+    document.dispatchEvent(
+      new CustomEvent("museu:quizquestionchange", {
+        detail: { questionIndex: currentIndex },
+      }),
+    );
   };
 
   const createResultLink = (href, label, isPrimary, openInNewTab = false) => {
@@ -187,6 +192,9 @@
       { score, total: questionCount, minimum: passingScore },
     );
     resultActions.replaceChildren();
+    document.dispatchEvent(
+      new CustomEvent("museu:quizresult", { detail: { score, passed } }),
+    );
 
     if (passed) {
       resultActions.append(

@@ -101,6 +101,11 @@
     previousRuleButton.disabled = activeRuleIndex === 0;
     nextRuleButton.disabled = activeRuleIndex === rules.length - 1;
     updateProgress();
+    document.dispatchEvent(
+      new CustomEvent("museu:rulechange", {
+        detail: { categoryIndex: activeIndex, ruleIndex: activeRuleIndex },
+      }),
+    );
   };
 
   const renderCategories = () => {

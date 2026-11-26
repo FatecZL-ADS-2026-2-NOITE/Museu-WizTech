@@ -60,6 +60,7 @@ const renderWorks = (language) => {
     }
     worksList.append(card);
   });
+  document.dispatchEvent(new CustomEvent("museu:worksrendered"));
 };
 
 document.addEventListener("museu:languagechange", (event) => {
